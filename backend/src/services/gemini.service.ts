@@ -1,5 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
 
 dotenv.config();
 
@@ -13,8 +15,8 @@ export class GeminiService {
             // Depending on strictness, we might rename this or let it fail later
         }
         this.genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
-        // Using gemini-1.5-flash for efficiency and multimodal support
-        this.model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        // Using gemini-2.5-flash as it is available and efficient
+        this.model = this.genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     }
 
     async analyze(prompt: string, image?: { mimeType: string; data: string }): Promise<string> {

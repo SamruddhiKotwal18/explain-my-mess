@@ -46,6 +46,7 @@ export class ExplanationController {
 
         } catch (error) {
             console.error('Explanation error:', error);
+
             res.status(500).json({ error: 'Failed to generate explanation' });
         }
     }

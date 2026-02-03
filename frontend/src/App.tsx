@@ -4,6 +4,7 @@ import { Send, AlertCircle, CheckCircle2, Sparkles, Mic, MicOff } from 'lucide-r
 import { Layout } from './components/Layout';
 import { FileUpload } from './components/FileUpload';
 import { ExplanationDisplay } from './components/ExplanationDisplay';
+import { VoiceVisualizer } from './components/VoiceVisualizer';
 
 const MAX_CHARS = 5000;
 
@@ -162,12 +163,19 @@ function App() {
                                         value={textContext}
                                         onChange={(e) => setTextContext(e.target.value)}
                                     />
+
+                                    {isListening && (
+                                        <div className="absolute left-4 right-16 bottom-0 h-16 pointer-events-none">
+                                            <VoiceVisualizer />
+                                        </div>
+                                    )}
+
                                     <button
                                         type="button"
                                         onClick={toggleListening}
                                         className={`absolute bottom-3 right-3 p-2 rounded-lg transition-all duration-300 ${isListening
-                                                ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20 animate-pulse'
-                                                : 'bg-surface hover:bg-primary/10 text-text-tertiary hover:text-primary'
+                                            ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20 animate-pulse'
+                                            : 'bg-surface hover:bg-primary/10 text-text-tertiary hover:text-primary'
                                             }`}
                                         title={isListening ? "Stop recording" : "Start recording"}
                                     >

@@ -1,5 +1,6 @@
 import ReactMarkdown from 'react-markdown';
-import { Bot, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface ExplanationDisplayProps {
     markdown: string;
@@ -31,15 +32,12 @@ export function ExplanationDisplay({ markdown, loading }: ExplanationDisplayProp
     return (
         <div className="w-full rounded-2xl border-2 border-border/30 bg-surface shadow-luxury overflow-hidden hover-luxury">
             {/* Luxurious Header with Gradient */}
-            <div className="relative gradient-rose px-6 py-5 flex items-center gap-4 border-b border-white/20">
+            <div className="relative gradient-luxury px-6 py-5 flex items-center gap-4 border-b border-white/20">
                 <div className="relative">
-                    <div className="absolute inset-0 bg-white/30 rounded-xl blur-md" />
-                    <div className="relative w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
-                        <Bot className="w-7 h-7 text-pink-600" />
-                    </div>
+                    <Logo size="md" className="text-white" style={{ filter: 'drop-shadow(0 0 12px rgba(255, 255, 255, 0.4))' }} />
                 </div>
                 <div>
-                    <h2 className="text-xl font-bold text-white">AI Explanation</h2>
+                    <h2 className="text-xl font-bold text-pink-200">AI Explanation</h2>
                     <p className="text-xs text-white/80 font-medium">Generated with care ✨</p>
                 </div>
             </div>

@@ -36,7 +36,7 @@ export function Layout({ children }: LayoutProps) {
                             rgba(251, 191, 36, 0.05) 50%,
                             transparent 70%
                         ),
-                        linear-gradient(135deg, rgb(250 245 255) 0%, rgb(255 250 245) 100%)
+                        linear-gradient(135deg, rgb(var(--color-background)) 0%, rgb(var(--color-surface-elevated)) 100%)
                     `
                 }}
             />
